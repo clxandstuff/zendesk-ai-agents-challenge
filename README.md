@@ -13,3 +13,7 @@ Hi Zendesk team, here is my solution for interview challenge. Please go through 
 ## Running tests
 
 `$ npm run test`
+
+## TODO:
+
+- add e2e tests with playwright
