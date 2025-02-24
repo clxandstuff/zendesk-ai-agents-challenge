@@ -1,6 +1,10 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import { delay, http, HttpResponse } from "msw";
 
 import IntentsPage from "./IntentsPage";
+import { server } from "../../mocks/server";
+import intents from "../../mocks/data/intents";
+import TestSwrConfig from "../../test-utils/TestSwrConfig";
 
 describe("IntentsPage", () => {
   it("renders the heading", () => {
@@ -36,7 +40,7 @@ describe("IntentsPage", () => {
   it('selects all intents when "Select All" button is clicked', async () => {
     render(<IntentsPage />);
 
-    const selectAllButton = screen.getByText(/Select All/i);
+    const selectAllButton = await screen.findByText(/Select All/i);
     fireEvent.click(selectAllButton);
     const checkboxes = screen.getAllByRole("checkbox");
 
@@ -44,5 +48,39 @@ describe("IntentsPage", () => {
       expect(checkbox).toBeChecked();
     });
     expect(screen.getByText(/Unselect All/i)).toBeInTheDocument();
+  });
+
+  it("renders loading state", async () => {
+    server.use(
+      http.get("/intents.json", async () => {
+        await delay("infinite");
+        return HttpResponse.json(intents);
+      }),
+    );
+
+    render(
+      <TestSwrConfig>
+        <IntentsPage />
+      </TestSwrConfig>,
+    );
+
+    const loadingText = await screen.findByText(/Loading intents.../i);
+    expect(loadingText).toBeInTheDocument();
+  });
+
+  it("renders error state", async () => {
+    server.use(
+      http.get("/intents.json", () => {
+        throw new Error("Network error");
+      }),
+    );
+    render(
+      <TestSwrConfig>
+        <IntentsPage />
+      </TestSwrConfig>,
+    );
+
+    const errorText = await screen.findByText(/Error fetching intents:/i);
+    expect(errorText).toBeInTheDocument();
   });
 });

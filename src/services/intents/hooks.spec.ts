@@ -3,7 +3,7 @@ import { renderHook, waitFor } from "@testing-library/react";
 import { useIntents } from "./hooks";
 
 describe("useIntents", () => {
-  it("returns the intents", async () => {
+  it("fetch intents", async () => {
     const { result } = renderHook(() => useIntents());
 
     await waitFor(() => {

@@ -4,7 +4,7 @@ import { fetchIntents } from "./fetcher";
 import { server } from "../../mocks/server";
 
 describe("fetchIntents", () => {
-  it("returns the intents", async () => {
+  it("fetch intents", async () => {
     const response = await fetchIntents();
 
     expect(response.length).toEqual(2);
@@ -13,7 +13,7 @@ describe("fetchIntents", () => {
   it("throws an error for non-200 status", async () => {
     server.use(
       http.get(
-        "intents.json",
+        "/intents.json",
         () => {
           return HttpResponse.error();
         },

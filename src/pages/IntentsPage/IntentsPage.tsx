@@ -1,9 +1,9 @@
 import React from "react";
 import { Heading, Text } from "@radix-ui/themes";
 
-import { useIntents } from "../services/intents/hooks";
-import MainLayout from "../layouts/MainLayout";
-import IntentCards from "../components/IntentList";
+import { useIntents } from "../../services/intents/hooks";
+import MainLayout from "../../layouts/MainLayout";
+import IntentCards from "../../components/IntentList";
 
 const IntentsPage: React.FC = () => {
   const { data: intents, error, isLoading } = useIntents();
