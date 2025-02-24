@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CheckboxGroup, Flex, Text } from "@radix-ui/themes";
 
 import { Intent } from "../../services/intents/types";
-import IntentCardName from "./IntentCardName";
+import IntentCardName from "./intent-card-name";
 
 interface IntentCardProps {
   intent: Intent;

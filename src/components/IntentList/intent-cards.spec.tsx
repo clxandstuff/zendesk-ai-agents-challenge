@@ -1,6 +1,6 @@
 import { screen, render, fireEvent, within } from "@testing-library/react";
 
-import IntentCards from "./IntentCards";
+import IntentCards from "./intent-cards";
 import intents from "../../mocks/data/intents";
 
 describe("IntentCards", () => {

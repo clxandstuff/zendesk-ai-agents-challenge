@@ -1,10 +1,10 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { delay, http, HttpResponse } from "msw";
 
-import IntentsPage from "./IntentsPage";
+import IntentsPage from "./intents-page";
 import { server } from "../../mocks/server";
 import intents from "../../mocks/data/intents";
-import TestSwrConfig from "../../test-utils/TestSwrConfig";
+import TestSwrConfig from "../../test-utils/test-swr-config";
 
 describe("IntentsPage", () => {
   it("renders the heading", () => {

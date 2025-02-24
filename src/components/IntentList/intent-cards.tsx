@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 import { Button, CheckboxGroup, Grid } from "@radix-ui/themes";
 
 import { Intent } from "../../services/intents/types";
-import IntentCard from "./IntentCard";
+import IntentCard from "./intent-card";
 
 interface IntentCardsProps {
   intents: Intent[];

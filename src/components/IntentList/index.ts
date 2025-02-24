@@ -1,3 +1,3 @@
-import IntentCards from "./IntentCards";
+import IntentCards from "./intent-cards";
 
 export default IntentCards;

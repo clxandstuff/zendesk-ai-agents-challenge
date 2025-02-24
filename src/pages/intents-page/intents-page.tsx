@@ -2,7 +2,7 @@ import React from "react";
 import { Heading, Text } from "@radix-ui/themes";
 
 import { useIntents } from "../../services/intents/hooks";
-import MainLayout from "../../layouts/MainLayout";
+import MainLayout from "../../layouts/main-layout";
 import IntentCards from "../../components/IntentList";
 
 const IntentsPage: React.FC = () => {

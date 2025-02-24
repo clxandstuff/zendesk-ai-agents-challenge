@@ -1,7 +1,7 @@
 import React from "react";
 import { Theme } from "@radix-ui/themes";
 
-import IntentsPage from "./pages/IntentsPage/IntentsPage";
+import IntentsPage from "./pages/intents-page/intents-page";
 import "./index.css";
 
 const App: React.FC = () => {
