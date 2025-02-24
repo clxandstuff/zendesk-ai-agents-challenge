@@ -1,6 +1,6 @@
 import { http, HttpResponse } from "msw";
 
-import { fetchIntents } from "./service";
+import { fetchIntents } from "./fetcher";
 import { server } from "../../mocks/server";
 
 describe("fetchIntents", () => {
