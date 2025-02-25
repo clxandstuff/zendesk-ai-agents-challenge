@@ -3,7 +3,7 @@ import { Heading, Text } from "@radix-ui/themes";
 
 import { useIntents } from "../../services/intents/hooks";
 import MainLayout from "../../layouts/main-layout";
-import IntentCards from "../../components/IntentList";
+import IntentCards from "../../components/intent-list";
 
 const IntentsPage: React.FC = () => {
   const { data: intents, error, isLoading } = useIntents();
